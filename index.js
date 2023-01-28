@@ -1,5 +1,44 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+const getLicense = (lic) => {
+    switch (lic) {
+        case 'MIT':
+            return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            break;
+
+        case 'IMB':
+            return '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)';
+            break;
+
+        case 'GNU GPL v3':
+            return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+            break;
+
+        case 'SC License (ISC)':
+            return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            break;
+        case 'Mozilla Public License 2.0':
+            return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+            break;
+        case 'Attribution License (BY)':
+            return '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
+            break;
+        case 'The zlib/libpng License':
+            return '[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)';
+            break;
+        case 'SIL Open Font License 1.1':
+            return '[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)';
+            break;
+        case 'The Artistic License 2.0':
+            '[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)';
+            break;
+        default:
+            break;
+
+    }
+}
+
 inquirer
     .prompt([
         {
@@ -46,7 +85,7 @@ inquirer
             type: 'checkbox',
             message: 'Please choose a license',
             name: 'license',
-            choices: ['MIT', 'zLib License', 'Mozilla Public License 2.0', 'Microsoft Public License', 'PostgreSQL License']
+            choices: ['MIT', 'The zlib/libpng License', 'Mozilla Public License 2.0', 'The Artistic License 2.0', 'SIL Open Font License 1.1', 'Attribution License (BY)', 'SC License (ISC)', 'GNU GPL v3', 'IMB']
         },
         {
             type: 'input',
@@ -70,23 +109,29 @@ inquirer
         }
     ])
     .then((answers) => {
+        let licenseImage = getLicense(answers.license);
+        console.log(answers.license);
+        console.log(licenseImage);
         let readFile = JSON.stringify(` 
-        # ${answers.name}
+        #${answers.name} (${licenseImage})
 
-        ## Description
+        
+        ## Table of contents
+
+        - [Description](#Description)
+        - [Installation](#Installation)
+        - [Usage](#Usage)
+        - [License](#License)
+        - [Contributing](#Contributing)
+        - [Tests](#Tests)
+        - [Questions](#Questions)
+        
+        ## Description 
+
         ${answers.desc1}
         ${answers.desc4}
         ${answers.desc2}
         ${answers.desc3}
-
-        ## Table of contents
-        - Description
-        - Installation
-        - Usage 
-        - License 
-        - Contributing
-        - Tests
-        - Questions
         
         ## Installation
         ${answers.install}
@@ -96,21 +141,23 @@ inquirer
         Click the link below to access the application
         ${answers.appLink}
         
-        ![screenshot of application](${imgLink})
-        
+        ![screenshot of application](${answers.imgLink})
         
         ## License
         
         ${answers.license}
         
         ## Contributing 
+
         Pull requests are welcome. For major changes, please open an issue first
         to discuss what you would like to change.
         
         ## Tests 
+
         ${answers.tests}
         
         ## Questions
+
         Any questions, please contact me on ${answers.email}
         ${answers.gitName}
         ${answers.gitLink}
