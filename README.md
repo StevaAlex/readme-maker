@@ -27,6 +27,7 @@
 
         Click the link below to access the application
 
+        Screenshot of what the CLI should look like when running the index.js file:
 ![screenshot of application](/assets/CLIscreenshot.png)
         
 ## License

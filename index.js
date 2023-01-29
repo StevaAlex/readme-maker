@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-function getLicense (lic) {
+function getLicense (lic) { //when lic is entered, the switch compares lic with case, and whichever one matches return the license bade link
     switch (lic) {
         case 'MIT':
             return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
@@ -27,7 +27,7 @@ function getLicense (lic) {
     }
 }
 
-inquirer
+inquirer //these prompts come up in the CLI
     .prompt([
         {
             type: 'input',
@@ -97,7 +97,7 @@ inquirer
             message: 'Please enter your github link',
             name: 'gitLink'
         }
-    ])
+    ]) //When prompts are done, asnwers are stored in 'answers', access the prompt results using 'answers.name', find the corrresponding result name above
     .then((answers) => {
        let licenseAns = (JSON.stringify((answers.license))).replace(/[\[\]"]/g,""); //the prompt returns ["MIT"], use the replace function to remove the brackets and quotes
         let licenseImage = getLicense(licenseAns); 
