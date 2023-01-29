@@ -103,18 +103,18 @@ inquirer
         let licenseImage = getLicense(licenseAns); 
         console.log(licenseImage);
         let readFile = JSON.stringify(` 
-        #${answers.name} (${licenseImage})
+        #${answers.name} ${licenseImage}
 
         
         ## Table of contents
 
-        - [Description](#Description)
-        - [Installation](#Installation)
-        - [Usage](#Usage)
-        - [License](#License)
-        - [Contributing](#Contributing)
-        - [Tests](#Tests)
-        - [Questions](#Questions)
+        - [Description](#description)
+        - [Installation](#installation)
+        - [Usage](#usage)
+        - [License](#license)
+        - [Contributing](#contributing)
+        - [Tests](#tests)
+        - [Questions](#questions)
         
         ## Description 
 
