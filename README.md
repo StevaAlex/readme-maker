@@ -16,7 +16,8 @@
         Application uses the CLI to generate a readme, based on the users input. 
         Technologies used: Visual studio code  
         This README was generated using this application 
-        Please remember to amend and delete parts you do not need in your final readme
+        Please remember to amend and delete parts you do not need in your final readme.
+        PS: If there is a license that you need, but it is not listed, just choose any license, and at the end, copy and paste the link to your readme file!
 
         
 ## Installation
