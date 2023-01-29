@@ -101,7 +101,7 @@ inquirer //these prompts come up in the CLI
     .then((answers) => {
        let licenseAns = (JSON.stringify((answers.license))).replace(/[\[\]"]/g,""); //the prompt returns ["MIT"], use the replace function to remove the brackets and quotes
         let licenseImage = getLicense(licenseAns); 
-        console.log(licenseImage);
+        console.log(licenseImage); //MAKE SURE NOT TO PUT SPACES BEFORE HASTAGS OR THE HEADINGS WONT WORK, THE LINKS WONT WORK EITHER
         let readFile = JSON.stringify(` 
 # ${answers.name} ${licenseImage}
 
@@ -124,8 +124,8 @@ inquirer //these prompts come up in the CLI
         ${answers.desc2} 
     Technologies used:
         ${answers.desc3}
-        
-## Installation
+         
+## Installation 
 
         ${answers.install}
         
