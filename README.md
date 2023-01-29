@@ -26,8 +26,8 @@
 ## Usage 
 
         Click the link below to access the application
-        
-        ![screenshot of application](./assets/Screenshot%202023-01-29%20at%2009.11.08.png)
+
+![screenshot of application](/assets/CLIscreenshot.png)
         
 ## License
         
