@@ -1,38 +1,26 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const getLicense = (lic) => {
+function getLicense (lic) {
     switch (lic) {
         case 'MIT':
-            return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
-            break;
-
+            return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`
         case 'IMB':
-            return '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)';
-            break;
-
+            return '[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)'
         case 'GNU GPL v3':
-            return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
-            break;
-
+            return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
         case 'SC License (ISC)':
-            return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
-            break;
+            return '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
         case 'Mozilla Public License 2.0':
-            return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
-            break;
+            return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
         case 'Attribution License (BY)':
-            return '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)';
-            break;
+            return '[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)'
         case 'The zlib/libpng License':
-            return '[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)';
-            break;
+            return '[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)'
         case 'SIL Open Font License 1.1':
-            return '[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)';
-            break;
+            return '[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)'
         case 'The Artistic License 2.0':
-            '[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)';
-            break;
+           return '[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)'
         default:
             break;
 
@@ -85,7 +73,9 @@ inquirer
             type: 'checkbox',
             message: 'Please choose a license',
             name: 'license',
-            choices: ['MIT', 'The zlib/libpng License', 'Mozilla Public License 2.0', 'The Artistic License 2.0', 'SIL Open Font License 1.1', 'Attribution License (BY)', 'SC License (ISC)', 'GNU GPL v3', 'IMB']
+            choices: [
+                'MIT', 'The zlib/libpng License', 'Mozilla Public License 2.0', 'The Artistic License 2.0', 'SIL Open Font License 1.1', 'Attribution License (BY)', 'SC License (ISC)', 'GNU GPL v3', 'IMB'
+            ]
         },
         {
             type: 'input',
@@ -109,8 +99,8 @@ inquirer
         }
     ])
     .then((answers) => {
-        let licenseImage = getLicense(answers.license);
-        console.log(answers.license);
+       let licenseAns = (JSON.stringify((answers.license))).replace(/[\[\]"]/g,""); //the prompt returns ["MIT"], use the replace function to remove the brackets and quotes
+        let licenseImage = getLicense(licenseAns); 
         console.log(licenseImage);
         let readFile = JSON.stringify(` 
         #${answers.name} (${licenseImage})
