@@ -103,50 +103,53 @@ inquirer
         let licenseImage = getLicense(licenseAns); 
         console.log(licenseImage);
         let readFile = JSON.stringify(` 
-        #${answers.name} ${licenseImage}
+# ${answers.name} ${licenseImage}
 
+ ## Table of contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
         
-        ## Table of contents
+## Description 
 
-        - [Description](#description)
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [License](#license)
-        - [Contributing](#contributing)
-        - [Tests](#tests)
-        - [Questions](#questions)
-        
-        ## Description 
-
-        ${answers.desc1}
-        ${answers.desc4}
-        ${answers.desc2}
+        ${answers.desc1} 
+    Some of the challenges faced:
+        ${answers.desc4} 
+    Some featured hoped to be implemented in the future:
+        ${answers.desc2} 
+    Technologies used:
         ${answers.desc3}
         
-        ## Installation
+## Installation
+
         ${answers.install}
         
         
-        ## Usage 
+## Usage 
+
         Click the link below to access the application
         ${answers.appLink}
-        
         ![screenshot of application](${answers.imgLink})
         
-        ## License
+## License
         
         ${answers.license}
         
-        ## Contributing 
+## Contributing 
 
         Pull requests are welcome. For major changes, please open an issue first
         to discuss what you would like to change.
         
-        ## Tests 
+## Tests 
 
         ${answers.tests}
         
-        ## Questions
+## Questions
 
         Any questions, please contact me on ${answers.email}
         ${answers.gitName}
