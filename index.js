@@ -134,7 +134,7 @@ inquirer
 
         Click the link below to access the application
         ${answers.appLink}
-        ![screenshot of application](${answers.imgLink})
+![screenshot of application](${answers.imgLink})
         
 ## License
         
