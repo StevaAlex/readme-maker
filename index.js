@@ -134,6 +134,7 @@ inquirer
 
         Click the link below to access the application
         ${answers.appLink}
+        Screenshot of what the CLI should look like when running the index.js file:
 ![screenshot of application](${answers.imgLink})
         
 ## License
