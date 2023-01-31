@@ -22,7 +22,7 @@
         
 ## Installation
 
-        NA
+        Clone repository, then open CL and run 'npm install'
         
         
 ## Usage 
