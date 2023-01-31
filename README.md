@@ -47,7 +47,8 @@ Using the CLI, run the index.js file to be prompted as per the screenshot.
         
 ## Questions
 
-Any questions, please contact me on:
-[StevaAlex](https://github.com/StevaAlex)
-        
+Any questions, please contact me on:  
+[Email Contact](mailto:StevaNotRealEmail.com)
+
+Github: [StevaAlex](https://github.com/StevaAlex)
         
