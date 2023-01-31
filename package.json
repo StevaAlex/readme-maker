@@ -1,0 +1,23 @@
+{
+  "name": "readme-maker",
+  "version": "1.0.0",
+  "description": "Uses the command line to generate a README",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevaAlex/readme-maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevaAlex/readme-maker/issues"
+  },
+  "homepage": "https://github.com/StevaAlex/readme-maker#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
+}
