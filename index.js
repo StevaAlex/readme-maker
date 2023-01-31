@@ -105,7 +105,7 @@ inquirer //these prompts come up in the CLI
         let readFile = JSON.stringify(` 
 # ${answers.name} ${licenseImage}
 
- ## Table of contents
+## Table of contents
 
 - [Description](#description)
 - [Installation](#installation)
@@ -117,24 +117,24 @@ inquirer //these prompts come up in the CLI
         
 ## Description 
 
-        ${answers.desc1} 
-    Some of the challenges faced:
-        ${answers.desc4} 
-    Some featured hoped to be implemented in the future:
-        ${answers.desc2} 
-    Technologies used:
-        ${answers.desc3}
+${answers.desc1} 
+Some of the challenges faced:
+${answers.desc4} 
+Some featured hoped to be implemented in the future:
+${answers.desc2} 
+Technologies used:
+${answers.desc3}
          
 ## Installation 
 
-        ${answers.install}
+${answers.install}
         
         
 ## Usage 
 
-        Click the link below to access the application
-        ${answers.appLink}
-        Screenshot of what the CLI should look like when running the index.js file:
+Click the link below to access the application
+${answers.appLink}
+Screenshot of what the CLI should look like when running the index.js file:
 ![screenshot of application](${answers.imgLink})
         
 ## License
@@ -143,18 +143,17 @@ inquirer //these prompts come up in the CLI
         
 ## Contributing 
 
-        Pull requests are welcomed. For major changes, please open an issue first
-        to discuss what you would like to change.
+Pull requests are welcomed. For major changes, please open an issue first to discuss what you would like to change.
         
 ## Tests 
 
-        ${answers.tests}
+${answers.tests}
         
 ## Questions
 
-        Any questions, please contact me on ${answers.email}
-        ${answers.gitName}
-        ${answers.gitLink}
+Any questions, please contact me on ${answers.email}
+${answers.gitName}
+${answers.gitLink}
         
         `)
         fs.writeFile('README.md', JSON.parse(readFile), (err) =>
