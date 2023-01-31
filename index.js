@@ -139,7 +139,7 @@ Screenshot of what the CLI should look like when running the index.js file:
         
 ## License
         
-        ${answers.license}
+${answers.license}
         
 ## Contributing 
 
@@ -151,8 +151,10 @@ ${answers.tests}
         
 ## Questions
 
-Any questions, please contact me on ${answers.email}
-[${answers.gitName}](${answers.gitLink})
+Any questions, please contact me on: 
+[Email Contact](mailto:${answers.email})
+
+Github: [${answers.gitName}](${answers.gitLink})
         
         `)
         fs.writeFile('README.md', JSON.parse(readFile), (err) =>
