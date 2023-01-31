@@ -32,6 +32,7 @@ https://github.com/StevaAlex/readme-maker.git
 
 Screenshot of what the CLI should look like when running the index.js file:
 ![screenshot of application](/assets/CLIscreenshot.png)
+[Watch the video demonstration](./assets/videodemo.mov)
         
 ## License
         
