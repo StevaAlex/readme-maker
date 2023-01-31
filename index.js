@@ -152,8 +152,7 @@ ${answers.tests}
 ## Questions
 
 Any questions, please contact me on ${answers.email}
-${answers.gitName}
-${answers.gitLink}
+[${answers.gitName}](${answers.gitLink})
         
         `)
         fs.writeFile('README.md', JSON.parse(readFile), (err) =>
